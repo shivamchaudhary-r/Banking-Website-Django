@@ -1,0 +1,179 @@
+{% extends 'accounts/base.html' %}
+
+{% block content %}
+
+<!-- hero content starts here -->
+    <div class="hero-content container-fluid ">
+        <div class="row align-items-center">
+          <div class="col-md-6 col-sm-12 text-center" data-aos="fade-up">
+            <p>Welcome to</p>
+            <br>
+            <h1 style="color: #10a8f5; font-size: xx-large; font-weight:bolder;">The Best Bank</h1>
+            <br>
+            <p>Get the access of your account now in the comfort of your home</p>
+            <p>Easy way to transfer money from any where</p>
+            <br>
+            {% if request.user.is_authenticated %}
+            <br>
+            <a class="get-started" href="#Cd2">Get Started</a>
+            {% else %}
+            <a class="get-started" href="{% url 'accounts:user_registration' %}">Register</a>
+            {% endif %}
+          </div>
+          <div class="col-md-6 col-sm-12 text-center" data-aos="fade-left">
+            <div class="hero-img-div">
+              <img class="hero-img" src="https://raw.githubusercontent.com/Tejesh469/basic-banking-system/ccefdd73357fbe16e23a4167f8cd28f3749bd088/assets/media/hero-img.svg" alt="img-showing-money-transfer" width="500" height="600">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- hero content ends here -->
+
+{% if request.user.is_authenticated %}    
+<!-- top card  -->
+
+<div class="row row-cols-1 row-cols-md-3 text-center">
+  <br>
+  <br>
+  <div id="Cd1"><img class="card-img img-fluid text-center" src="https://media.istockphoto.com/vectors/people-clients-consumer-characters-waiting-in-line-in-bank-office-vector-id1148658955?k=6&m=1148658955&s=170667a&w=0&h=3l1K63wC3M137dYH4aSXIwMtpSWUpNjQvkzlXgLulHE=" alt="Card image" >
+    <h1 class="card-text text-center " style=" color:#4341ad; font-size: xx-large; font-weight:bolder; margin-top: -3%; margin-bottom: 2%;" >Bank Services</h1>
+  </div>  
+</div>
+
+
+<!-- card C2 -->
+<div class="row row-cols-1 row-cols-md-3">
+  <div class="col">
+      <div class="card text-center">
+          <img id="Cd2" src="https://image.freepik.com/free-vector/saving-money-financial-concept_74855-7849.jpg" alt="">
+          <div class="card-body">
+              <h3 class="card-title" style="font-size:x-large; font-weight: bolder;">Deposit Money</h3>
+              <p class="card-text">Transfers money into your savings account.</p>
+              <br>
+              <a href="{% url 'transactions:deposit_money' %}" class="btn btn-warning">Deposit Money</a>
+          </div>
+      </div>
+  </div>
+
+  <!-- card C3 -->
+
+  <div class="col">
+      <div class="card text-center">
+          <img id="Cd3" src="https://image.freepik.com/free-vector/happy-rich-banker-celebrating-income-growth_74855-5867.jpg" alt="...">
+          <div class="card-body">
+              <h3 class="card-title" style="font-size:x-large; font-weight: bolder;">Withdraw Money</h3>
+              <p class="card-text"> Taking out money from your account at a bank</p>
+              <br>
+              <a href="{% url 'transactions:withdraw_money' %}" class="btn btn-success">Withdaw Money</a>
+          </div>
+      </div>
+  </div>
+  
+  <!-- card C4 -->
+
+  <div class="col">
+    <div class="card text-center">
+        <img id="Cd4" src="https://image.freepik.com/free-vector/mobile-bank-users-transferring-money-currency-conversion-tiny-people-online-payment-cartoon-illustration_74855-14454.jpg" alt="...">
+        <div class="card-body">
+          <h3 class="card-title" style="font-size:x-large; font-weight: bolder;">Transfer Money</h3>
+            <p class="card-text">Transfer Money to anyone from anywhere.</p>
+            <br>
+            <a href="{% url 'basicbank:transfermoney' %}" class="btn btn-danger">Transfer Money</a>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- card C5 -->
+
+<div class="row row-cols-1 row-cols-md-3">
+<div class="col">
+    <div class="card text-center">
+        <img id="Cd5" src="https://ezipay.africa/wp-content/uploads/2021/05/transfert-argent-ligne-services-bancaires-mobiles_7087-1055.jpg" alt="">
+        <div class="card-body">
+            <h3 class="card-title" style="font-size:x-large; font-weight: bolder;">Create Account</h3>
+            <p class="card-text">Open a new saving account in the Bank.</p>
+            <br>
+            <a href="{% url 'admin:index' %}" class="btn btn-info">Create Account</a>
+        </div>
+    </div>
+</div>
+
+<!-- card C6 -->
+
+<div class="col">
+    <div class="card text-center">
+        <img id="Cd6" src="https://img.freepik.com/free-vector/online-transfer-money-with-mobile-banking_7087-1054.jpg?size=626&ext=jpg" alt="...">
+        <div class="card-body">
+            <h3 class="card-title"style="font-size:x-large; font-weight: bolder;">Transaction History</h3>
+            <p class="card-text"> View Transaction Details and History. </p>
+            <br>
+            <a href="{% url 'basicbank:transferdetails' %}" class="btn btn-warning">Transaction History</a>
+        </div>
+    </div>
+</div>
+
+<!-- card C7 -->
+
+  <div class="col">
+        <div class="card text-center">
+            <img id="Cd7" src="https://www.rpaywallet.com/blog/wp-content/uploads/2020/07/mobile-wallet.jpg" alt="...">
+            <div class="card-body">
+                <h3 class="card-title" style="font-size:x-large; font-weight: bolder;">Balance Amount</h3>
+                <p class="card-text">View Bank Statement and Mini Statement </p>
+                <br>
+                <a href="{% url 'transactions:transaction_report' %}" class="btn btn-primary">Balance Amount</a>
+            </div>
+        </div>
+    </div>
+</div>
+    
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<!-- Contact form -->
+
+<section class="contact-content">
+<div class="container-fluid ">
+  <section class="section1 ">
+    <div class="textcenter">
+      <br>
+      <h1 style="color: #10a8f5; font-size: xx-large; font-weight:bolder; margin-top:3%;">Contact Us</h1>
+    </div>
+  </section>
+  <section class=" row align-items-center section2">
+    <div class="col-md-6 col-sm-12 text-center" data-aos="fade-left">
+      <div class="contact-img-div">
+        <img class="contact-img" src="https://atlas.org.il/wp-content/uploads/2019/02/business-dev2.png" alt="" height="80%" width="80%">
+      </div>
+    </div>
+    <div class="col-md-6 col-sm-12 col2 column2 last" data-aos="fade-right">
+        <div class=" sec2contactform">
+          <h2 style="color: #10a8f5; font-size: x-large; font-weight:bold;">Drop Us a Mail</h2>
+          <br>
+          <form action="">
+            <div>
+              <input class="col2 first" type="text" placeholder="FirstName">
+              <input class="col2 last" type="text" placeholder="LastName">
+            </div>
+            <div>
+              <input  class="col2 first" type="Email" placeholder="Email">
+              <input class="col2 last" type="text" placeholder="Contact Number">
+            </div>
+            <div >
+              <textarea name="textarea" id="" cols="30" rows="7">Your message here...</textarea>
+            </div>
+            <div><input type="submit" value="Send" id="#sub"></div>
+          </form>
+        </div>
+    </div>
+</section>
+</div>
+</section>
+
+{% endif %}
+   
+{% endblock %}

@@ -1,0 +1,298 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <!-- Required meta tags -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <!-- Bootstrap CSS -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+   <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
+   <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
+   {% block head_extra %}{% endblock %}
+   
+<title>Basic Banking System</title>
+</head>
+
+{% csrf_token %}
+
+<div class="container-fluid">
+      
+
+{% block body %}
+
+    {% include 'accounts/navbar.html' %}
+        {% include 'accounts/messages.html' %}
+                {% block content %}
+                <!-- Add content here -->
+                {% endblock %}
+    {% include 'accounts/footer.html' %}
+
+{% endblock %}
+
+{% block footer_extra %}{% endblock %}
+
+</div>
+
+
+<link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+<style>
+
+    html{
+        padding: 0;
+        margin: 0;
+    }
+    
+    /* Body */
+    
+    body {
+        font-family:  'Poppins','Roboto', sans-serif !important;
+    }
+    
+      /* Hero  */
+      .hero-content{
+        height: 100vh;
+        background-color: #4341ad ;
+        color: #ffffff;
+        padding: 3rem;
+        border-bottom-left-radius: 45rem;
+        border-bottom-right-radius: 45rem;
+        margin-bottom: 1vh;
+    }
+    
+    .hero-img{
+        height: 70vh;
+        width: 100%;
+    }
+    
+    .get-started{
+        border-radius: 0.5rem;
+        padding: 1rem 2rem;
+        font-size: 100%;
+        background-color: #fff;
+        color: #4341ad!important;
+        transition: 0.5s;
+    }
+    
+    .get-started:hover{
+        text-decoration: none;
+        background-color:#039be5;
+        
+    }
+    
+    /* Cards */
+    
+    .card {
+        border-style: none;
+    }
+    
+    #Cd1 {
+        width: 100%;
+        height: 70%;
+        overflow: hidden;
+    }
+    
+    #Cd1 img {
+        width: 110vh;
+        align-self: center;
+        margin:auto;
+    }
+        
+    #Cd2{
+        width:95%;
+        position: relative;
+        left:10%;
+    }
+    
+    #Cd3{
+        width:90%;
+        position: relative;
+    }
+    
+    #Cd4{
+        width:92%;
+        position: relative;
+    }
+    
+    #Cd5{
+        width:105%;
+        position: relative;
+    }
+    
+    #Cd6{
+        width:105%;
+        position: relative;
+    }
+    
+    #Cd7{
+        width:100%;
+        position: relative;
+    }
+    
+    
+    .contact-content{
+        height: 100vh;
+        background-color: #4341ad ;
+        color: #ffffff;
+        padding: 1rem;
+        border-top-left-radius: 45rem;
+        border-top-right-radius: 45rem;
+        margin-top: 1vh;
+    }
+    input:focus, textarea:focus, keygen:focus, select:focus {
+        outline: none;
+    }
+    
+    /* Contact Form Styling */
+    .textcenter {
+        text-align: center;
+    }
+    
+    .section2 {
+        width: 100%;
+        margin: 25px;
+        padding-left: 0%;
+        
+    }
+    .section2 .contact-img{
+        margin:auto;
+    }
+    .section2 .col2.first {
+        float: left;
+    }
+    .section2 .col2.last {
+        float: right;
+    }
+    .section2 .col2.column2 {
+        padding: 25px 150px 0px 0px;
+    }
+    .section2 span.collig {
+        color: #666;
+        margin-right: 10px;
+        display: inline-block;
+    }
+    .section2 .sec2addr {
+        display: block;
+        line-height: 25px;
+    }
+    .section2 .sec2addr p:first-child {
+        margin-bottom: 10px;
+    }
+    .section2 .sec2contactform input[type="text"], 
+    .section2 .sec2contactform input[type="email"],
+    .section2 .sec2contactform textarea {
+        padding: 15px;
+        border: 0;
+        border-radius: 5px;
+        color: #666;
+        background: #EDEDED;
+        margin: 7px 0;
+    }
+    .section2 .sec2contactform textarea {
+        width: 100%;
+        display: block;
+        color: #666;
+      border-radius: 5px;
+      resize:none;
+      margin-bottom: 5%;
+    }
+    .section2 .sec2contactform input[type="submit"] {
+        color:#ffffff;
+        background: #10a8f5;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    
+    .footer {
+        margin-top: 0px;  
+        padding-top: 20px;
+      }
+    
+    
+    /* LINKS */
+    
+    a:link, a:visited {
+        color: var(--link-fg);
+        text-decoration: none;
+        transition: color 0.5s, background 0.5s;
+    }
+    
+    a:focus, a:hover {
+        color: var(--link-hover-color);
+        text-decoration: none;
+        transition: color 0.5s, background 0.5s;
+    }
+    
+    
+    /* TABLES */
+    
+    table{
+        margin: auto;
+        width: 70%;
+        border-collapse: collapse;
+        border-color: var(--border-color);
+    
+    }
+    
+    td, th{
+        border-bottom: 1px solid var(--hairline-color);
+        vertical-align: top;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    
+    thead th,
+    tfoot td {
+        color: var(--body-quiet-color);
+        background: var(--body-bg);
+        border-top: 1px solid var(--hairline-color);
+        border-bottom: 1px solid var(--hairline-color);
+    }
+    
+    
+    /* FORM DEFAULTS */
+    
+    .blk{
+        display: block;
+        width: 100%;
+        padding: 5px 5px;
+        font-weight: bold;
+    }
+    
+    input, textarea, select,bform .button {
+        margin: auto;
+    
+    }
+    
+    input[type=text], input[type=password], input[type=email], input[type=url],
+    input[type=number], input[type=tel], textarea, select, .vTextField {
+        border: 1px solid black;
+        border-radius: 1px;
+        padding: 5px 5px;
+        color: var(--body-fg);
+        background-color: var(--body-bg);
+    }
+    
+    .button, input[type=submit], input[type=button], .submit-row input, a.button {
+        background: var(--button-bg);
+        padding: 10px 10px;
+        border: none;
+        border-radius: 4px;
+        color: var(--button-fg);
+        cursor: pointer;
+        transition: background 0.5s;
+    }
+    
+    </style>
+    
+</body>
+</html>

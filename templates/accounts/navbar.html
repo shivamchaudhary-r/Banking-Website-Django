@@ -1,0 +1,33 @@
+<!-- navbar -->
+
+<nav class="navbar navbar-expand-lg bg-light ">
+    <div class="container"><a class="navbar-brand" href="{% url 'home' %}" style="font-weight:bolder; color:#4341ad ;">BEST BANK</a>
+        <ul class="nav justify-content-center m-2">
+          {% if request.user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'transactions:deposit_money' %}" style="font-weight:bold;">Deposit</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"  href="{% url 'transactions:withdraw_money' %}" style="font-weight:bold;">Withdraw</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="{% url 'basicbank:transfermoney' %}" style="font-weight:bold;">Transfer</a>
+          </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'transactions:transaction_report' %}" style="font-weight:bold;">Transaction</a>
+            </li>
+          <li class="nav-item">
+              <a class="nav-link"  href="{% url 'accounts:user_logout' %}" style="font-weight:bold;">Log Out</a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+              <a class="nav-link"  href="{% url 'accounts:user_login' %}" style="font-weight:bold;">Sign In</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link"  href="{% url 'accounts:user_registration' %}" style="font-weight:bold;">Sign Up</a>
+          </li>
+          {% endif %}
+        </ul>
+    </div>
+  </nav>
+  

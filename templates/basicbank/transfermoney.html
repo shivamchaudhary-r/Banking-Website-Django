@@ -1,0 +1,51 @@
+{% extends 'accounts/base.html' %}
+{% load static %}
+{% block content %}
+<title >Tranfer Money</title>
+
+<div class="container">
+    <h1 class="font-poppins font-bold text-3xl text-center pb-5 pt-10">Transfer Money</h1>
+<hr />
+<div class="w-full mt-5">
+    <form method="post" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        {% csrf_token %}
+
+        <div class="mb-4">
+            <label class="block text-black-700 text-sm font-bold mb-2" for="amount">
+                Select Sender Details
+            </label>
+            <select class="blk shadow appearance-none border rounded w-full py-2 px-3 text-black-700 leading-tight border rounded-md border-gray-500 focus:outline-none focus:shadow-outline" name="email" id="sender" required> <option class="blk" value="select">Select</option>
+                {% for cust in customer  %}
+                <option class="blk" value="{{cust.email}}">{{cust.name}}: {{cust.email}} [AccBal: {{cust.accbal}}]</option>
+                {% endfor %}
+            </select>    
+        </div>
+        <div class="mb-4">
+            <label class="block text-black-700 text-sm font-bold mb-2" for="amount">
+                Enter Amount
+            </label>
+            <input class="blk shadow appearance-none border rounded w-full py-2 px-3 text-black-700 leading-tight border rounded-md border-gray-500 focus:outline-none focus:shadow-outline" name="amount" id="amt" type="number" required >
+        </div>
+        <div class="mb-4">
+            <label class="block text-black-700 text-sm font-bold mb-2" for="amount">
+                Select Reciever Details
+            </label>
+            <select class="blk shadow appearance-none border rounded w-full py-2 px-3 text-black-700 leading-tight border rounded-md border-gray-500 focus:outline-none focus:shadow-outline" name="email" id="reciever" required> <option class="blk" value="select">Select</option>
+                {% for cust in customer  %}
+                <option class="blk" value="{{cust.email}}">{{cust.name}}: {{cust.email}}</option>
+                {% endfor %}
+            </select>    
+        </div>
+
+        <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+            Transfer
+        </button>
+    </form>
+    <br>
+    <br>
+</div>
+
+<br>
+<br>
+
+{% endblock content %}
