@@ -1,4 +1,4 @@
-# Basic Banking System
+![Screenshot (57)](https://github.com/shivamchaudhary-r/bestbank-django/assets/79602168/9a1804ea-ee58-4b99-9dcd-1923a5604afe)# Basic Banking System
 The Basic Banking System is a web application that offers essential banking functionalities such as creating accounts, depositing and withdrawing money, transferring funds, and generating transaction reports. It supports different account types, provides interest calculation, and features a modern user interface. Built with Django, it provides a secure and scalable foundation for banking applications.
 
 ## Features
@@ -29,7 +29,7 @@ python manage.py runserver
 ![Screenshot (49)](https://github.com/shivamchaudhary-r/bestbank-django/assets/79602168/eb0e2d20-8a97-4c87-9cdc-3b13475e9d5b)
 ![Screenshot (50)](https://github.com/shivamchaudhary-r/bestbank-django/assets/79602168/a1d233b6-0bdb-4d94-817a-3b0175d6b535)
 ![Screenshot (56)](https://github.com/shivamchaudhary-r/bestbank-django/assets/79602168/a8ff54eb-2ae9-4f2e-8cfc-468dfaeeeb9d)
-![Picture6](https://github.com/shivamchaudhary-r/bestbank-django/assets/79602168/92bd5849-5fda-48aa-ab0e-b09f0e7612ec)
+![Screenshot (57)](https://github.com/shivamchaudhary-r/bestbank-django/assets/79602168/28d60952-261a-4150-b755-b23e53b20d73)
 ![Screenshot (51)](https://github.com/shivamchaudhary-r/bestbank-django/assets/79602168/bb0a5885-830f-480d-bcb6-83337010568b)
 ![Screenshot (54)](https://github.com/shivamchaudhary-r/bestbank-django/assets/79602168/d26c08b2-34ec-4bcb-899e-ff49e8f79fa1)
 ![Screenshot (53)](https://github.com/shivamchaudhary-r/bestbank-django/assets/79602168/7fd94ba4-0f57-4d98-aa79-9a8314b45031)
