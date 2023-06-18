@@ -18,9 +18,11 @@ The Basic Banking System is a web application that offers essential banking func
 ## Installation
 ```
 git clone
-pip install Django
-django-admin startproject myproject
-cd myproject
+cd project
+python3 -m venv env
+.\env\Scripts\activate
+pip install -r requirements.txt
+python manage.py migrate
 python manage.py runserver
 ```
 ## Snapshots
